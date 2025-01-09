@@ -74,8 +74,8 @@ const FileDetail = memo<FileListItem>((props) => {
         colon={false}
         column={1}
         items={items}
-        labelStyle={{ width: 120 }}
         size={'small'}
+        styles={{ label: { width: 120 } }}
         title={t('detail.basic.title')}
       />
       <Divider />
@@ -83,8 +83,8 @@ const FileDetail = memo<FileListItem>((props) => {
         colon={false}
         column={1}
         items={dataItems}
-        labelStyle={{ width: 120 }}
         size={'small'}
+        styles={{ label: { width: 120 } }}
       />
     </Flexbox>
   );

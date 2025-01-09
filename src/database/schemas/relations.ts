@@ -45,8 +45,12 @@ export const filesToSessions = pgTable(
 export const fileChunks = pgTable(
   'file_chunks',
   {
-    fileId: varchar('file_id').references(() => files.id, { onDelete: 'cascade' }),
-    chunkId: uuid('chunk_id').references(() => chunks.id, { onDelete: 'cascade' }),
+    fileId: varchar('file_id')
+      .notNull()
+      .references(() => files.id, { onDelete: 'cascade' }),
+    chunkId: uuid('chunk_id')
+      .notNull()
+      .references(() => chunks.id, { onDelete: 'cascade' }),
     createdAt: createdAt(),
   },
   (t) => ({
