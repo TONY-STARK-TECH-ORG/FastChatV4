@@ -14,6 +14,7 @@ const isUsePglite = process.env.NEXT_PUBLIC_CLIENT_DB === 'pglite';
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH;
 
 const nextConfig: NextConfig = {
+  output: 'standalone',
   basePath,
   compress: isProd,
   experimental: {
@@ -104,7 +105,6 @@ const nextConfig: NextConfig = {
       },
     ];
   },
-  output: buildWithDocker ? 'standalone' : undefined,
   reactStrictMode: true,
   redirects: async () => [
     {
