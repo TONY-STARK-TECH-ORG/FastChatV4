@@ -118,24 +118,6 @@ const DevModal = memo<DevModalProps>(
               e.stopPropagation();
             }}
           >
-            <Alert
-              message={
-                <Trans i18nKey={'dev.modalDesc'} ns={'plugin'}>
-                  添加自定义插件后，可用于插件开发验证，也可直接在会话中使用。插件开发文档请参考：
-                  <a
-                    href={WIKI_PLUGIN_GUIDE}
-                    rel="noreferrer"
-                    style={{ paddingInline: 8 }}
-                    target={'_blank'}
-                  >
-                    文档
-                  </a>
-                  <Icon icon={MoveUpRight} />
-                </Trans>
-              }
-              showIcon
-              type={'info'}
-            />
             <Segmented
               block
               onChange={(e) => {

@@ -27,9 +27,7 @@ import { serverConfigSelectors } from '@/store/serverConfig/selectors';
 
 import AboutList from './features/AboutList';
 import Analytics from './features/Analytics';
-import ItemCard from './features/ItemCard';
 import ItemLink from './features/ItemLink';
-import Version from './features/Version';
 
 const useStyles = createStyles(({ css, token }) => ({
   title: css`
@@ -41,7 +39,6 @@ const useStyles = createStyles(({ css, token }) => ({
 
 const Page = memo<{ mobile?: boolean }>(({ mobile }) => {
   const { t } = useTranslation('common');
-  const { styles } = useStyles();
   const enabledTelemetryChat = useServerConfigStore(serverConfigSelectors.enabledTelemetryChat);
 
   return (
@@ -52,83 +49,23 @@ const Page = memo<{ mobile?: boolean }>(({ mobile }) => {
         variant={'pure'}
       >
         <Flexbox gap={20} paddingBlock={20} width={'100%'}>
-          <div className={styles.title}>{t('version')}</div>
-          <Version mobile={mobile} />
-          <Divider style={{ marginBlock: 0 }} />
-          <div className={styles.title}>{t('contact')}</div>
           <AboutList
             ItemRender={ItemLink}
             items={[
               {
-                href: OFFICIAL_SITE,
+                href: 'https://fastx-ai.com',
                 label: t('officialSite'),
                 value: 'officialSite',
               },
               {
-                href: mailTo(EMAIL_SUPPORT),
+                href: mailTo('x.stark.dylan@gmail.com'),
                 label: t('mail.support'),
                 value: 'support',
               },
               {
-                href: mailTo(EMAIL_BUSINESS),
+                href: mailTo('x.stark.dylan@gmail.com'),
                 label: t('mail.business'),
                 value: 'business',
-              },
-            ]}
-          />
-          <Divider style={{ marginBlock: 0 }} />
-          <div className={styles.title}>{t('information')}</div>
-          <AboutList
-            ItemRender={ItemCard}
-            grid
-            items={[
-              {
-                href: BLOG,
-                icon: SiRss,
-                label: t('blog'),
-                value: 'blog',
-              },
-              {
-                href: GITHUB,
-                icon: SiGithub,
-                label: 'GitHub',
-                value: 'feedback',
-              },
-              {
-                href: DISCORD,
-                icon: SiDiscord,
-                label: 'Discord',
-                value: 'discord',
-              },
-              {
-                href: X,
-                icon: SiX as any,
-                label: 'X / Twitter',
-                value: 'x',
-              },
-
-              {
-                href: MEDIDUM,
-                icon: SiMedium,
-                label: 'Medium',
-                value: 'medium',
-              },
-            ]}
-          />
-          <Divider style={{ marginBlock: 0 }} />
-          <div className={styles.title}>{t('legal')}</div>
-          <AboutList
-            ItemRender={ItemLink}
-            items={[
-              {
-                href: TERMS_URL,
-                label: t('terms'),
-                value: 'terms',
-              },
-              {
-                href: PRIVACY_URL,
-                label: t('privacy'),
-                value: 'privacy',
               },
             ]}
           />

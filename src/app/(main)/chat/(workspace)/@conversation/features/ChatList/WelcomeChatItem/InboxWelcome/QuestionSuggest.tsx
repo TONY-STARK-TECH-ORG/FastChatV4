@@ -68,40 +68,41 @@ const QuestionSuggest = memo<{ mobile?: boolean }>(({ mobile }) => {
   const { styles } = useStyles();
   const { send: sendMessage } = useSendMessage();
 
-  return (
-    <Flexbox gap={8} width={'100%'}>
-      <Flexbox align={'center'} horizontal justify={'space-between'}>
-        <div className={styles.title}>{t('guide.questions.title')}</div>
-        <Link href={USAGE_DOCUMENTS} target={'_blank'}>
-          <ActionIcon
-            icon={ArrowRight}
-            size={{ blockSize: 24, fontSize: 16 }}
-            title={t('guide.questions.moreBtn')}
-          />
-        </Link>
-      </Flexbox>
-      <Flexbox gap={8} horizontal wrap={'wrap'}>
-        {qa.slice(0, mobile ? 2 : 5).map((item) => {
-          const text = t(`guide.qa.${item}` as any, { appName: BRANDING_NAME });
-          return (
-            <Flexbox
-              align={'center'}
-              className={styles.card}
-              gap={8}
-              horizontal
-              key={item}
-              onClick={() => {
-                updateInputMessage(text);
-                sendMessage({ isWelcomeQuestion: true });
-              }}
-            >
-              {t(text)}
-            </Flexbox>
-          );
-        })}
-      </Flexbox>
-    </Flexbox>
-  );
+  // return (
+  //   <Flexbox gap={8} width={'100%'}>
+  //     <Flexbox align={'center'} horizontal justify={'space-between'}>
+  //       <div className={styles.title}>{t('guide.questions.title')}</div>
+  //       <Link href={USAGE_DOCUMENTS} target={'_blank'}>
+  //         <ActionIcon
+  //           icon={ArrowRight}
+  //           size={{ blockSize: 24, fontSize: 16 }}
+  //           title={t('guide.questions.moreBtn')}
+  //         />
+  //       </Link>
+  //     </Flexbox>
+  //     <Flexbox gap={8} horizontal wrap={'wrap'}>
+  //       {qa.slice(0, mobile ? 2 : 5).map((item) => {
+  //         const text = t(`guide.qa.${item}` as any, { appName: BRANDING_NAME });
+  //         return (
+  //           <Flexbox
+  //             align={'center'}
+  //             className={styles.card}
+  //             gap={8}
+  //             horizontal
+  //             key={item}
+  //             onClick={() => {
+  //               updateInputMessage(text);
+  //               sendMessage({ isWelcomeQuestion: true });
+  //             }}
+  //           >
+  //             {t(text)}
+  //           </Flexbox>
+  //         );
+  //       })}
+  //     </Flexbox>
+  //   </Flexbox>
+  // );
+  return null;
 });
 
 export default QuestionSuggest;
