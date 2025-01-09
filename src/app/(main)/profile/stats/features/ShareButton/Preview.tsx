@@ -1,4 +1,3 @@
-import { Github } from '@lobehub/icons';
 import { Grid } from '@lobehub/ui';
 import { createStyles } from 'antd-style';
 import { memo } from 'react';
@@ -111,17 +110,6 @@ const Preview = memo(() => {
                 zIndex: 2,
               }}
             />
-            <Center
-              className={styles.avatar}
-              height={48}
-              style={{
-                borderRadius: '50%',
-                zIndex: 1,
-              }}
-              width={48}
-            >
-              <ProductLogo size={40} />
-            </Center>
           </Flexbox>
           <Flexbox gap={12} paddingBlock={12} width={'100%'}>
             <AiHeatmaps
@@ -145,8 +133,7 @@ const Preview = memo(() => {
               OFFICIAL_URL
             ) : (
               <Flexbox align={'center'} gap={8} horizontal>
-                <Github size={16} />
-                <span>lobehub/lobe-chat</span>
+                <span>fastx-ai.com</span>
               </Flexbox>
             )}
           </div>

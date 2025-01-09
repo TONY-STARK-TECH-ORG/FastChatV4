@@ -13,13 +13,10 @@ enum ErrorEnum {
 
 const errorMap = {
   [ErrorEnum.Configuration]:
-    'Wrong configuration, make sure you have the correct environment variables set. Visit https://lobehub.com/docs/self-hosting/advanced/authentication for more details.',
-  [ErrorEnum.AccessDenied]:
-    'Access was denied. Visit https://authjs.dev/reference/core/errors#accessdenied for more details. ',
-  [ErrorEnum.Verification]:
-    'Verification error, visit https://authjs.dev/reference/core/errors#verification for more details.',
-  [ErrorEnum.Default]:
-    'There was a problem when trying to authenticate. Visit https://authjs.dev/reference/core/errors for more details.',
+    'Wrong configuration, make sure you have the correct environment variables set.',
+  [ErrorEnum.AccessDenied]: 'Access was denied.',
+  [ErrorEnum.Verification]: 'Verification error.',
+  [ErrorEnum.Default]: 'There was a problem when trying to authenticate.',
 };
 
 export default memo(() => {
